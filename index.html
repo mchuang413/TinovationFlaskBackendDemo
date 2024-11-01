@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinovation Flask Demo</title>
+    <script>
+        function fetchData() {
+            fetch('http://127.0.0.1:5000/getData')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.content) {
+                        document.getElementById('dataDisplay').innerText = data.content;
+                    } else {
+                        document.getElementById('dataDisplay').innerText = 'Error: ' + data.error;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('dataDisplay').innerText = 'Error: ' + error;
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>Tinovation Flask Demo</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <pre id="dataDisplay">Press the button to fetch data from the server...</pre>
+</body>
+</html>
