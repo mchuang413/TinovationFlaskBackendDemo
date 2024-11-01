@@ -1,2 +1,6 @@
 Hello this is top secret information
 Please do not share this information with anybody
+Make sure nobody see this or else this is bad.
+
+Make sure this is hidden. Try to save things in .env to secure information
+

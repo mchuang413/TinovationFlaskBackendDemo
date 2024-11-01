@@ -25,5 +25,20 @@
     <h1>Tinovation Flask Demo</h1>
     <button onclick="fetchData()">Fetch Data</button>
     <pre id="dataDisplay">Press the button to fetch data from the server...</pre>
+    <p>Server time: <span id="serverTime"></span></p>
+    <script>
+        function updateServerTime() {
+            fetch('http://localhost:5000/getTime')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('serverTime').innerText = data.time;
+                })
+                .catch(error => {
+                    document.getElementById('serverTime').innerText = 'Error: ' + error;
+                });
+        }
+        updateServerTime();
+        setInterval(updateServerTime, 1000);
+    </script>
 </body>
 </html>
