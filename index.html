@@ -40,5 +40,47 @@
         updateServerTime();
         setInterval(updateServerTime, 1000);
     </script>
+    <script>
+        function updateServerTime() {
+            fetch('http://localhost:5000/getTime')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('serverTime').innerText = data.time;
+                })
+                .catch(error => {
+                    document.getElementById('serverTime').innerText = 'Error: ' + error;
+                });
+        }
+        updateServerTime();
+        setInterval(updateServerTime, 1000);
+    </script>
+    <script>
+        function updateServerTime() {
+            fetch('http://localhost:5000/getTime')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('serverTime').innerText = data.time;
+                })
+                .catch(error => {
+                    document.getElementById('serverTime').innerText = 'Error: ' + error;
+                });
+        }
+        updateServerTime();
+        setInterval(updateServerTime, 1000);
+    </script>
+    <script>
+        function updateServerTime() {
+            fetch('http://localhost:5000/getTime')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('serverTime').innerText = data.time;
+                })
+                .catch(error => {
+                    document.getElementById('serverTime').innerText = 'Error: ' + error;
+                });
+        }
+        updateServerTime();
+        setInterval(updateServerTime, 1000);
+    </script>
 </body>
 </html>

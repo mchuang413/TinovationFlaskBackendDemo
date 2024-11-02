@@ -39,5 +39,28 @@ def delete_data():
     }
     return jsonify(response)
 
+@app.route('/api/data', methods=['DELETE'])
+def delete_data():
+    response = {
+        'message': 'Data deleted!'
+    }
+    return jsonify(response)
+
+@app.route('/api/data', methods=['PATCH'])
+def patch_data():
+    updated_data = request.json
+    response = {
+        'message': 'Data patched!',
+        'updated_data': updated_data
+    }
+    return jsonify(response)
+
+@app.route('/api/data', methods=['OPTIONS'])
+def options_data():
+    response = {
+        'message': 'Data options!'
+    }
+    return jsonify(response)
+
 if __name__ == '__main__':
     app.run(debug=True)
